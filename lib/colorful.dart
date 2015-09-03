@@ -10,4 +10,8 @@ class Color {
   int _b;
 
   Color(this._r, this._g, this._b);
+
+  get r => _r;
+  get g => _g;
+  get b => _b;
 }
