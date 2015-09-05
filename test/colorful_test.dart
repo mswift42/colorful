@@ -21,4 +21,16 @@ void main() {
     Color c3 = new Color(0,0,255);
     expect(c2.isValid(), true);
   });
+  test('isValid returns false for out of bounds rgb values', () {
+    Color c1 = new Color(0,0,-1);
+    expect(c1.isValid(), false);
+    Color c2 = new Color(255,255,256);
+    expect(c2.isValid(), false);
+    Color c3 = new Color(500,500,500);
+    expect(c3.isValid(), false);
+    Color c4 = new Color(256,255,255);
+    expect(c4.isValid(), false);
+    Color c5 = new Color(0,256,0);
+    expect(c5.isValid(), false);
+  });
 }
