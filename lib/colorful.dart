@@ -5,9 +5,9 @@
 library colorful;
 
 class Color {
-  int _r;
-  int _g;
-  int _b;
+  double _r;
+  double _g;
+  double _b;
 
   Color(this._r, this._g, this._b);
 
@@ -16,8 +16,11 @@ class Color {
   get b => _b;
 
   bool isValid() {
-    return 0 <= this._r && this._r <= 255 &&
-           0 <= this._g && this._g <= 255 &&
-           0 <= this._b && this._b <= 255;
+    return 0.0 <= this._r && this._r <= 1.0 &&
+           0.0 <= this._g && this._g <= 1.0 &&
+           0.0 <= this._b && this._b <= 1.0;
   }
+
+  
+  
 }
