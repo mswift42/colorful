@@ -13,4 +13,12 @@ void main() {
     expect(c1.b, 44);
     expect(c1.g, 33);
   });
+  test('isValid returns true for acceptable rgb values', () {
+    Color c1 = new Color(0,0,0);
+    expect(c1.isValid(), true);
+    Color c2 = new Color(255,255,255);
+    expect(c2.isValid(), true);
+    Color c3 = new Color(0,0,255);
+    expect(c2.isValid(), true);
+  });
 }
