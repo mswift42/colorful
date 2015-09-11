@@ -4,6 +4,7 @@
 library colorful.test;
 
 import 'package:colorful/colorful.dart';
+import 'package:color/color.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -11,6 +12,12 @@ void main() {
     ColorPalette cp = new ColorPalette(3, 20.0,20.0);
     expect(cp.size, 3);
     expect(cp.colors.length, 3);
+  });
+  test('initialised colorpalette colors fields are of type color', () {
+    ColorPalette cp = new ColorPalette(10, 40.0, 50.0);
+    expect(cp.size, 10);
+    expect(cp.colors.length, 10);
+    expect(cp.colors.every((i) => i is Color), true);
   });
   test('randomHue returns valuse between 0 and 359', () {
     var cp = new ColorPalette(3,20.0,20.0);
