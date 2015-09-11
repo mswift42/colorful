@@ -9,7 +9,8 @@ import 'package:test/test.dart';
 void main() {
   test('initialize ColorPalette', () {
     ColorPalette cp = new ColorPalette(3);
-    expect(cp.length, 3);
+    expect(cp.size, 3);
+    expect(cp.colors.length, 0);
   });
   test('randomHue returns valuse between 0 and 359', () {
     var cp = new ColorPalette(3);

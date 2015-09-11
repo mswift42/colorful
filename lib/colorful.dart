@@ -8,14 +8,13 @@ import 'package:color/color.dart';
 import 'dart:math';
 
 class ColorPalette {
-  final int length;
+  final int size;
+  List<Color> colors = new List();
 
-
-  ColorPalette(this.length);
+  ColorPalette(this.size);
 
   double randomHue() {
     var rand = new Random();
     return rand.nextInt(360).toDouble();
   }
-
 }
