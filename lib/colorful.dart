@@ -36,12 +36,6 @@ class ColorPalette {
 }
 
 class SoftPalette extends ColorPalette {
-  final int size;
-  final double saturation = 0.4;
-  final double lightness = 0.51;
-  List<Color> colors = new List();
 
-  SoftPalette(this.size) {
-
-  }
+  SoftPalette(size) : super(0.4, 0.5, size);
 }
