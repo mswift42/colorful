@@ -15,7 +15,7 @@ class ColorPalette {
 
   ColorPalette(this.size, this.saturation, this.lightness) {
     var hr = hueRange(randomHue());
-    hr.forEach((i) => colors.add(new Color.hsl(i, this.saturation, this.lightness)));
+    hr.forEach((i) => colors.add(new Color.hsl(i, saturation, lightness)));
   }
 
   double randomHue() {
