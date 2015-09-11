@@ -20,4 +20,17 @@ void main() {
       expect(a <= 359.0, true);
     }
   });
+  test('hueRande returns a List of length size.', () {
+    var cp = new ColorPalette(3);
+    var hr = cp.hueRange(20.0);
+    expect(hr.length, 3);
+  });
+  test('hueRange values are all below 360', () {
+    var cp = new ColorPalette(8);
+    var hr = cp.hueRange(20.0);
+    expect(hr.any((i) => (i > 359.0)), false);
+    cp = new ColorPalette(10);
+    hr = cp.hueRange(300.0);
+    expect(hr.any((i) => (i > 359.0)), false);
+  });
 }
