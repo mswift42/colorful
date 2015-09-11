@@ -8,12 +8,12 @@ import 'package:color/color.dart';
 import 'dart:math';
 
 class ColorPalette {
-  final int size;
   final double saturation;
   final double lightness;
+  final int size;
   List<Color> colors = new List();
 
-  ColorPalette(this.size, this.saturation, this.lightness) {
+  ColorPalette(this.saturation, this.lightness, this.size) {
     var hr = hueRange(randomHue());
     hr.forEach((i) => colors.add(new Color.hsl(i, saturation, lightness)));
   }
@@ -36,5 +36,12 @@ class ColorPalette {
 }
 
 class SoftPalette extends ColorPalette {
+  final int size;
+  final double saturation = 0.4;
+  final double lightness = 0.51;
+  List<Color> colors = new List();
 
+  SoftPalette(this.size) {
+
+  }
 }
