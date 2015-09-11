@@ -17,4 +17,15 @@ class ColorPalette {
     var rand = new Random();
     return rand.nextInt(360).toDouble();
   }
+
+  List<double> hueRange(double startValue) {
+    var distance = 360.0 / this.size;
+    var hrange = [startValue];
+    var hue = startValue + distance;
+    for (int i = 1;i < this.size; i++){
+      hrange.add(hue % 360);
+      hue += distance;
+    }
+    return hrange;
+  }
 }
