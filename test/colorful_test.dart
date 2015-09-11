@@ -40,4 +40,9 @@ void main() {
     hr = cp.hueRange(300.0);
     expect(hr.any((i) => (i > 359.0)), false);
   });
+  test('SoftPalette gets initialised correctly', () {
+    var sp = new SoftPalette(10);
+    expect(sp.colors.length, 10);
+    expect(sp.colors[0] is HslColor, true);
+  });
 }
