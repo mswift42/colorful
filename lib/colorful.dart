@@ -40,6 +40,10 @@ class SoftPalette extends ColorPalette {
   SoftPalette(size) : super(41.0, 51.0, size);
 }
 
+class WarmPalette extends ColorPalette {
+  WarmPalette(size) : super(34.1, 66.1, size);
+}
+
 class CustomPalette extends ColorPalette {
   CustomPalette(saturation, lightness, size)
       : super(saturation, lightness, size);
