@@ -17,7 +17,7 @@ void main() {
     SoftPalette cp = new SoftPalette(10);
     expect(cp.size, 10);
     expect(cp.colors.length, 10);
-    expect(cp.colors.every((i) => i is Color), true);
+    expect(cp.colors.every((i) => i is HexColor), true);
   });
   test('randomHue returns valuse between 0 and 359', () {
     var cp = new SoftPalette(8);

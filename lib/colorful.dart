@@ -11,11 +11,11 @@ abstract class ColorPalette {
   final double saturation;
   final double lightness;
   final int size;
-  List<Color> colors = new List();
+  List<HexColor> colors = new List();
 
   ColorPalette(this.saturation, this.lightness, this.size) {
     var hr = hueRange(randomHue());
-    hr.forEach((i) => colors.add(new Color.hsl(i, saturation, lightness)));
+    hr.forEach((i) => colors.add(new Color.hsl(i, saturation, lightness).toHexColor()));
   }
 
   double randomHue() {
