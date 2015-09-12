@@ -47,7 +47,12 @@ abstract class ColorPalette {
 /// The Hsl saturation value is set to 41 % and the
 /// lightness value is set to 51 %.
 class SoftPalette extends ColorPalette {
-  SoftPalette(size) : super(41.0, 51.0, size);
+  /// Creates a SoftPalette of the given size.
+  /// Saturation is set to 41.0 %, Lightness
+  /// is set to 51.0 %.
+  ///
+  ///     SoftPalette sp = new SoftPalette(5);
+  SoftPalette(int size) : super(41.0, 51.0, size);
 }
 
 class WarmPalette extends ColorPalette {
