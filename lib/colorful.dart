@@ -35,12 +35,16 @@ abstract class ColorPalette {
     hr.forEach((i) =>
         colors.add(new Color.hsl(i, saturation, lightness).toHexColor()));
   }
-
+  /// randomHue returns a random Double between
+  /// 0 and 359 (inclusive).
   double _randomHue() {
     var rand = new Random();
     return rand.nextInt(360).toDouble();
   }
-
+  /// hueRange returns a List of length
+  /// 'size' of Doubles between 0 and 360.
+  /// The difference between each Double
+  /// is (360 / list.length).
   List<double> _hueRange(double startValue) {
     var distance = 360.0 / this.size;
     var hrange = [startValue];
