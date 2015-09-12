@@ -7,6 +7,12 @@ library colorful;
 import 'package:color/color.dart';
 import 'dart:math';
 
+/// Instances of the class ColorPalette represent
+/// an Array with length [size] of equally distant HexColors of the same
+/// [saturation] and lightness values.
+///
+/// Saturation and lightness are [double] values between
+/// 0 and 100 (inclusive).
 abstract class ColorPalette {
   final double saturation;
   final double lightness;
@@ -35,7 +41,11 @@ abstract class ColorPalette {
     return hrange;
   }
 }
-
+/// SoftPalette represents a ColorPalette with soft colors
+/// of size [size].
+///
+/// The Hsl saturation value is set to 41 % and the
+/// lightness value is set to 51 %.
 class SoftPalette extends ColorPalette {
   SoftPalette(size) : super(41.0, 51.0, size);
 }
