@@ -2,6 +2,13 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 /// The colorful library.
+/// Create a List of equally distant random colors.
+/// Each color in the color list has the same values
+/// for saturation and lightness.
+///
+/// ColorPalettes can be generated from predefined palettes,
+/// like Soft or Warm, or by supplying the values for
+/// saturation and lightness, vustom made.
 library colorful;
 
 import 'package:color/color.dart';
