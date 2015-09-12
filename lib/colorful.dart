@@ -19,6 +19,10 @@ abstract class ColorPalette {
   final int size;
   List<HexColor> colors = new List();
 
+  /// creates a ColorPalette of size [size], with the
+  /// hex colors in [List] [colors] converted from
+  /// Hsl colors with saturation and lightness set to the given
+  /// values, and the hue value calculated with method [hueRange].
   ColorPalette(this.saturation, this.lightness, this.size) {
     var hr = hueRange(randomHue());
     hr.forEach((i) =>
