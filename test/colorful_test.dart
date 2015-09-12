@@ -19,27 +19,6 @@ void main() {
     expect(cp.colors.length, 10);
     expect(cp.colors.every((i) => i is HexColor), true);
   });
-  test('randomHue returns valuse between 0 and 359', () {
-    var cp = new SoftPalette(8);
-    for (int i = 0;i<10000;i++) {
-      var a = cp._randomHue();
-      expect(a >= 0.0, true);
-      expect(a <= 359.0, true);
-    }
-  });
-  test('hueRange returns a List of length size.', () {
-    var cp = new SoftPalette(3);
-    var hr = cp._hueRange(20.0);
-    expect(hr.length, 3);
-  });
-  test('hueRange values are all below 360', () {
-    var cp = new SoftPalette(8);
-    var hr = cp._hueRange(20.0);
-    expect(hr.any((i) => (i > 359.0)), false);
-    cp = new SoftPalette(10);
-    hr = cp._hueRange(300.0);
-    expect(hr.any((i) => (i > 359.0)), false);
-  });
   test('CustomPalette gets initialised correctly', () {
     var cp = new CustomPalette(41.0, 51.0,8);
     expect(cp.size, 8);
