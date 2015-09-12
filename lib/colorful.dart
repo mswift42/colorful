@@ -54,8 +54,17 @@ class SoftPalette extends ColorPalette {
   ///     SoftPalette sp = new SoftPalette(5);
   SoftPalette(int size) : super(41.0, 51.0, size);
 }
-
+/// WarmPalette represents a ColorPalette with warm colors
+/// of size [size]
+///
+/// The Hsl saturation value is set to 34.1 % and the
+/// lightness value is set to 66.1 %.
 class WarmPalette extends ColorPalette {
+  /// Creates a WarmPalette of the given size.
+  /// Saturation is set to 34.1 %, Lightness
+  /// is set to 66.1 %.
+  ///
+  ///     WarmPalette wp = new WarmPalette(8);
   WarmPalette(size) : super(34.1, 66.1, size);
 }
 
