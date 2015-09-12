@@ -71,8 +71,16 @@ class WarmPalette extends ColorPalette {
   ///     WarmPalette wp = new WarmPalette(8);
   WarmPalette(size) : super(34.1, 66.1, size);
 }
-
+/// CustomPalette represents a ColorPalette with
+/// custom colors of size [size].
+///
+/// The Hsl saturation and lightness
+/// are set to the given values.
 class CustomPalette extends ColorPalette {
+  /// Creates a CustomPalette with the given
+  /// saturation and lightness of size [size].
+  ///
+  /// CustomPalette cp = new CustomPalette(40.1, 66.4, 5);
   CustomPalette(saturation, lightness, size)
       : super(saturation, lightness, size);
 }
