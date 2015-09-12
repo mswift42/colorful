@@ -45,4 +45,10 @@ void main() {
     expect(cp.size, 8);
     expect(cp.colors.length, 8);
   });
+  test('WarmPalette gets initialised correctly', () {
+    var cp = new WarmPalette(7);
+    expect(cp.size, 7);
+    expect(cp.colors.length, 7);
+    expect(cp.colors.every((i) => i is HexColor), true);
+  });
 }
