@@ -39,3 +39,7 @@ class SoftPalette extends ColorPalette {
 
   SoftPalette(size) : super(0.4, 0.5, size);
 }
+
+class CustomPalette extends ColorPalette {
+  CustomPalette(saturation, lightness, size) : super(saturation, lightness, size);
+}
