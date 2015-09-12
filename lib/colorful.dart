@@ -7,7 +7,7 @@ library colorful;
 import 'package:color/color.dart';
 import 'dart:math';
 
-class ColorPalette {
+abstract class ColorPalette {
   final double saturation;
   final double lightness;
   final int size;
