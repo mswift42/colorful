@@ -41,7 +41,7 @@ void main() {
     expect(hr.any((i) => (i > 359.0)), false);
   });
   test('CustomPalette gets initialised correctly', () {
-    var cp = new CustomPalette(0.4, 0.5, 8);
+    var cp = new CustomPalette(41, 51,8);
     expect(cp.size, 8);
     expect(cp.colors.length, 8);
   });

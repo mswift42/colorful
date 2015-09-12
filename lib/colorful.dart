@@ -15,7 +15,8 @@ abstract class ColorPalette {
 
   ColorPalette(this.saturation, this.lightness, this.size) {
     var hr = hueRange(randomHue());
-    hr.forEach((i) => colors.add(new Color.hsl(i, saturation, lightness).toHexColor()));
+    hr.forEach((i) =>
+        colors.add(new Color.hsl(i, saturation, lightness).toHexColor()));
   }
 
   double randomHue() {
@@ -27,7 +28,7 @@ abstract class ColorPalette {
     var distance = 360.0 / this.size;
     var hrange = [startValue];
     var hue = startValue + distance;
-    for (int i = 1;i < this.size; i++){
+    for (int i = 1; i < this.size; i++) {
       hrange.add(hue % 360);
       hue += distance;
     }
@@ -36,10 +37,10 @@ abstract class ColorPalette {
 }
 
 class SoftPalette extends ColorPalette {
-
-  SoftPalette(size) : super(0.4, 0.5, size);
+  SoftPalette(size) : super(41.0, 51.0, size);
 }
 
 class CustomPalette extends ColorPalette {
-  CustomPalette(saturation, lightness, size) : super(saturation, lightness, size);
+  CustomPalette(saturation, lightness, size)
+      : super(saturation, lightness, size);
 }
