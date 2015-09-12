@@ -87,7 +87,7 @@ class CustomPalette extends ColorPalette {
   /// Creates a CustomPalette with the given
   /// saturation and lightness of size [size].
   ///
-  /// CustomPalette cp = new CustomPalette(40.1, 66.4, 5);
+  ///     CustomPalette cp = new CustomPalette(40.1, 66.4, 5);
   CustomPalette(saturation, lightness, size)
       : super(saturation, lightness, size);
 }
