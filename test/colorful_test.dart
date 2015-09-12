@@ -22,22 +22,22 @@ void main() {
   test('randomHue returns valuse between 0 and 359', () {
     var cp = new SoftPalette(8);
     for (int i = 0;i<10000;i++) {
-      var a = cp.randomHue();
+      var a = cp._randomHue();
       expect(a >= 0.0, true);
       expect(a <= 359.0, true);
     }
   });
   test('hueRange returns a List of length size.', () {
     var cp = new SoftPalette(3);
-    var hr = cp.hueRange(20.0);
+    var hr = cp._hueRange(20.0);
     expect(hr.length, 3);
   });
   test('hueRange values are all below 360', () {
     var cp = new SoftPalette(8);
-    var hr = cp.hueRange(20.0);
+    var hr = cp._hueRange(20.0);
     expect(hr.any((i) => (i > 359.0)), false);
     cp = new SoftPalette(10);
-    hr = cp.hueRange(300.0);
+    hr = cp._hueRange(300.0);
     expect(hr.any((i) => (i > 359.0)), false);
   });
   test('CustomPalette gets initialised correctly', () {

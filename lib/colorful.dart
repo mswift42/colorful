@@ -31,17 +31,17 @@ abstract class ColorPalette {
   /// Hsl colors with saturation and lightness set to the given
   /// values, and the hue value calculated with method [hueRange].
   ColorPalette(this.saturation, this.lightness, this.size) {
-    var hr = hueRange(randomHue());
+    var hr = _hueRange(_randomHue());
     hr.forEach((i) =>
         colors.add(new Color.hsl(i, saturation, lightness).toHexColor()));
   }
 
-  double randomHue() {
+  double _randomHue() {
     var rand = new Random();
     return rand.nextInt(360).toDouble();
   }
 
-  List<double> hueRange(double startValue) {
+  List<double> _hueRange(double startValue) {
     var distance = 360.0 / this.size;
     var hrange = [startValue];
     var hue = startValue + distance;
