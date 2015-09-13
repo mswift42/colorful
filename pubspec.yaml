@@ -1,14 +1,13 @@
 name: colorful
-version: 0.0.1
-description: A sample command-line application.
-#author: Your Name <email@example.com>
-#homepage: https://www.example.com
-
+version: 1.0.0
+description: Create Hex Colors with the same values for saturation and lightness, and equally distand hue values. ColorPalettes can be generated from preset Palettes, or custumized by supplying the saturation and lightness values.
+author: Your Name <martin.haesler@gmail.com>
+homepage: https://github.com/mswift42/colorful
 environment:
   sdk: '>=1.0.0 <2.0.0'
 
 dependencies:
-  color: any
+  color: '2.0.0'
 
 dev_dependencies:
   test: '>=0.12.0 <0.13.0'
