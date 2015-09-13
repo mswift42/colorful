@@ -30,4 +30,14 @@ void main() {
     expect(cp.colors.length, 7);
     expect(cp.colors.every((i) => i is HexColor), true);
   });
+  test('PopPalette gets initialised correctly', () {
+    var pp = new PopPalette(7);
+    expect(pp.size, 7);
+    expect(pp.colors.length, 7);
+    expect(pp.colors.every((i) => i is HexColor), true);
+    var pp2 = new PopPalette(30);
+    expect(pp2.size, 30);
+    expect(pp2.colors.length, 30);
+    expect(pp.colors.every((i) => i is HexColor), true);
+  });
 }
