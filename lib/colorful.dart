@@ -55,6 +55,14 @@ abstract class ColorPalette {
     }
     return hrange;
   }
+  /// toString() returns a newline seperated string
+  /// containing every HexColor in [colors] with the
+  /// '#' character prepended.
+  String toString() {
+    String res = '';
+    colors.forEach((i) => res += '#${i}\n');
+    return res;
+  }
 }
 /// SoftPalette represents a ColorPalette with soft colors
 /// of size [size].
