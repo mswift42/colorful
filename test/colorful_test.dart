@@ -13,6 +13,13 @@ void main() {
     expect(cp.size, 3);
     expect(cp.colors.length, 3);
   });
+  test('printing a colorpalette object returns the correct string', () {
+    SoftPalette sp = new SoftPalette(10);
+    var spstring = sp.toString();
+    var split = spstring.trim().split('\n');
+    expect(split.length,10);
+    expect(split.every((i) => (i[0] == '#')), true);
+  });
   test('initialised colorpalette colors fields are of type color', () {
     SoftPalette cp = new SoftPalette(10);
     expect(cp.size, 10);
