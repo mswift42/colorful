@@ -11,6 +11,27 @@ ColorPalettes can be generated from predefined palettes,
 like Soft or Warm, or by supplying the values for
 saturation and lightness, custom made.
 
+# Installation
+
+Add this to your package's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  colorful: any
+```
+
+Get the package using your IDE's GUI or via command line with
+
+```bash
+$ pub get
+```
+
+Import the `colorful.dart` file in your app
+
+```dart
+import 'package:colorful/colorful.dart';
+```
+
 # Usage
 
 Predefined Color Palettes can be constructed by supplying the number of
