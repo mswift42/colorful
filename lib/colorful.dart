@@ -82,6 +82,19 @@ class WarmPalette extends ColorPalette {
   ///     WarmPalette wp = new WarmPalette(8);
   WarmPalette(size) : super(34.1, 66.1, size);
 }
+/// PopPalette represents a ColorPalette with
+/// colors that 'pop' of size [size]
+///
+/// The Hsl saturation value is set to 51.4 % and
+/// the lightness value is set to 42.0 %.
+class PopPalette extends ColorPalette {
+  /// Creates a PopPalette with the given [size].
+  /// Saturation is set to 51.4 %, Lightness is set
+  /// to 66.1 %.
+  ///
+  ///     PopPalette pp = new PopPalette(8);
+  PopPalette(size) : super(51.4, 42.0, size);
+}
 /// CustomPalette represents a ColorPalette with
 /// custom colors of size [size].
 ///
@@ -95,3 +108,5 @@ class CustomPalette extends ColorPalette {
   CustomPalette(saturation, lightness, size)
       : super(saturation, lightness, size);
 }
+
+
