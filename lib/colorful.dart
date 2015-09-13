@@ -8,7 +8,7 @@
 ///
 /// ColorPalettes can be generated from predefined palettes,
 /// like Soft or Warm, or by supplying the values for
-/// saturation and lightness, vustom made.
+/// saturation and lightness, custom made.
 library colorful;
 
 import 'package:color/color.dart';
