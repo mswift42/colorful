@@ -1,10 +1,11 @@
 name: colorful
-version: 1.0.0
+version: 1.0.1
 description: Create Hex Colors with the same values for saturation and lightness, and equally distand hue values. ColorPalettes can be generated from preset Palettes, or custumized by supplying the saturation and lightness values.
-author: Your Name <martin.haesler@gmail.com>
+author: Martin Haesler <martin.haesler@gmail.com>
 homepage: https://github.com/mswift42/colorful
 environment:
   sdk: '>=1.0.0 <2.0.0'
+documentation:
 
 dependencies:
   color: '>=2.0.0 <=3.0.0'
