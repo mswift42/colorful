@@ -101,7 +101,7 @@ class WarmPalette extends ColorPalette {
 class PopPalette extends ColorPalette {
   /// Creates a PopPalette with the given [size].
   /// Saturation is set to 51.4 %, Lightness is set
-  /// to 66.1 %.
+  /// to 42.0 %.
   ///
   ///     PopPalette pp = new PopPalette(8);
   PopPalette(size) : super(51.4, 42.0, size);
