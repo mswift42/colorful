@@ -22,5 +22,20 @@ To create a SoftPalette with 7 colors, call:
     
 The color list can be accessed with:
     
-    sp.colors
+    sp.colors;
+    
+Other predefined ColorPalettes:
+
+    WarmPalette wp = new WarmPalette(10);
+    List<HexColor> cl = wp.colors;
+    
+    PopPalette pp = new PopPalette(6);
+    List<HexColor> cl = pp.colors;
+    
+You can create custom palettes by supplying values for saturation, lightness
+and size. 
+
+    CustomPalette cp = new CustomPalette(41.0, 51.0, 8);
+    
+Values for saturation and lightness are percent values between 0 and 100.
 
