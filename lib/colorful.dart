@@ -24,8 +24,14 @@ import 'dart:math';
 /// Saturation and lightness are [double] values between
 /// 0 and 100 (inclusive).
 abstract class ColorPalette {
+  /// saturation is the ratio of colorfulness
+  /// to brightness in percent.
   final double saturation;
+  /// lightness in percent. A Hsl color with
+  /// lightness of 100 % is white, a lightness value
+  /// of 0 would be black.
   final double lightness;
+  /// size is the length of the returned color list of method [colors].
   final int size;
 
   /// creates a ColorPalette of size [size].
