@@ -27,7 +27,7 @@ abstract class ColorPalette {
   final double saturation;
   final double lightness;
   final int size;
-  List<HexColor> colors = new List();
+  final List<HexColor> colors = new List();
 
   /// creates a ColorPalette of size [size], with the
   /// hex colors in [List] [colors] converted from
