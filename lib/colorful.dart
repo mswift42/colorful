@@ -27,16 +27,18 @@ abstract class ColorPalette {
   final double saturation;
   final double lightness;
   final int size;
-  final List<HexColor> colors = new List();
 
   /// creates a ColorPalette of size [size], with the
   /// hex colors in [List] [colors] converted from
   /// Hsl colors with saturation and lightness set to the given
   /// values, and the hue value calculated with method [hueRange].
-  ColorPalette(this.saturation, this.lightness, this.size) {
+  ColorPalette(this.saturation, this.lightness, this.size);
+
+  List<HexColor> colors() {
+    var colorlist = new List();
     var hr = _hueRange(_randomHue());
-    hr.forEach((i) =>
-        colors.add(new Color.hsl(i, saturation, lightness).toHexColor()));
+    hr.forEach((i) => colorlist.add(new Color.hsl(i, saturation, lightness).toHexColor()));
+    return colorlist;
   }
   /// randomHue returns a random Double between
   /// 0 and 359 (inclusive).
@@ -63,7 +65,7 @@ abstract class ColorPalette {
   /// '#' character prepended.
   String toString() {
     String res = '';
-    colors.forEach((i) => res += '#${i}\n');
+    colors().forEach((i) => res += '#${i}\n');
     return res;
   }
 }
