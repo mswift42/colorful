@@ -54,5 +54,6 @@ void main() {
     for (var i = 0; i < cl1.length; i++) {
       expect(cl1[i] != cl2[i], true);
     }
+    expect(pp.toString() != pp.toString(), true);
   });
 }
