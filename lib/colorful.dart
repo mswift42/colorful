@@ -28,12 +28,14 @@ abstract class ColorPalette {
   final double lightness;
   final int size;
 
-  /// creates a ColorPalette of size [size], with the
-  /// hex colors in [List] [colors] converted from
-  /// Hsl colors with saturation and lightness set to the given
-  /// values, and the hue value calculated with method [hueRange].
+  /// creates a ColorPalette of size [size].
+  /// Saturation and Lightness are set as percentage values
+  /// between 0 and 100.
   ColorPalette(this.saturation, this.lightness, this.size);
 
+  /// colors returns a List of HexColors of length [size], each color with
+  /// a different hue value and of the same saturation and lightness
+  /// values.
   List<HexColor> colors() {
     var colorlist = new List();
     var hr = _hueRange(_randomHue());
