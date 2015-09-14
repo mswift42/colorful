@@ -17,7 +17,7 @@ void main() {
     SoftPalette sp = new SoftPalette(10);
     var spstring = sp.toString();
     var split = spstring.trim().split('\n');
-    expect(split.length,10);
+    expect(split.length, 10);
     expect(split.every((i) => (i[0] == '#')), true);
   });
   test('initialised colorpalette colors fields are of type color', () {
@@ -27,7 +27,7 @@ void main() {
     expect(cp.colors().every((i) => i is HexColor), true);
   });
   test('CustomPalette gets initialised correctly', () {
-    var cp = new CustomPalette(41.0, 51.0,8);
+    var cp = new CustomPalette(41.0, 51.0, 8);
     expect(cp.size, 8);
     expect(cp.colors().length, 8);
   });
@@ -46,5 +46,13 @@ void main() {
     expect(pp2.size, 30);
     expect(pp2.colors().length, 30);
     expect(pp.colors().every((i) => i is HexColor), true);
+  });
+  test('two random colorlists are not equal', () {
+    var pp = new PopPalette(7);
+    var cl1 = pp.colors();
+    var cl2 = pp.colors();
+    for (var i = 0; i < cl1.length; i++) {
+      expect(cl1[i] != cl2[i], true);
+    }
   });
 }
