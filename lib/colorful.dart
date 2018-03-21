@@ -14,8 +14,9 @@
 /// saturation and lightness, custom made.
 library colorful;
 
-import 'package:color/color.dart';
 import 'dart:math';
+
+import 'package:color/color.dart';
 
 /// Instances of the class ColorPalette represent
 /// an Array with length [size] of equally distant HexColors of the same
@@ -27,10 +28,12 @@ abstract class ColorPalette {
   /// saturation is the ratio of colorfulness
   /// to brightness in percent.
   final double saturation;
+
   /// lightness in percent. A Hsl color with
   /// lightness of 100 % is white, a lightness value
   /// of 0 would be black.
   final double lightness;
+
   /// size is the length of the returned color list of method [colors].
   final int size;
 
@@ -43,40 +46,45 @@ abstract class ColorPalette {
   /// a different hue value and of the same saturation and lightness
   /// values.
   List<HexColor> colors() {
-    var colorlist = new List();
-    var hr = _hueRange(_randomHue());
-    hr.forEach((i) => colorlist.add(new Color.hsl(i, saturation, lightness).toHexColor()));
-    return colorlist;
+    final List<HexColor> colorList = <HexColor>[];
+    final List<double> hr = _hueRange(_randomHue());
+    hr.forEach((double i) => colorList.add(new Color.hsl(i, saturation, lightness).toHexColor()));
+    return colorList;
   }
+
   /// randomHue returns a random Double between
   /// 0 and 359 (inclusive).
   double _randomHue() {
-    var rand = new Random();
+    final Random rand = new Random();
     return rand.nextInt(360).toDouble();
   }
+
   /// hueRange returns a List of length
   /// 'size' of Doubles between 0 and 360.
   /// The difference between each Double
   /// is (360 / list.length).
   List<double> _hueRange(double startValue) {
-    var distance = 360.0 / this.size;
-    var hrange = [startValue];
-    var hue = startValue + distance;
-    for (int i = 1; i < this.size; i++) {
+    final double distance = 360.0 / size;
+    final List<double> hrange = <double>[startValue];
+    double hue = startValue + distance;
+    for (int i = 1; i < size; i++) {
       hrange.add(hue % 360);
       hue += distance;
     }
     return hrange;
   }
+
   /// toString() returns a newline seperated string
   /// containing every HexColor in [colors] with the
   /// '#' character prepended.
+  @override
   String toString() {
     String res = '';
-    colors().forEach((i) => res += '#${i}\n');
+    colors().forEach((HexColor i) => res += '#$i\n');
     return res;
   }
 }
+
 /// SoftPalette represents a ColorPalette with soft colors
 /// of size [size].
 ///
@@ -90,6 +98,7 @@ class SoftPalette extends ColorPalette {
   ///     SoftPalette sp = new SoftPalette(5);
   SoftPalette(int size) : super(41.0, 51.0, size);
 }
+
 /// WarmPalette represents a ColorPalette with warm colors
 /// of size [size]
 ///
@@ -101,8 +110,9 @@ class WarmPalette extends ColorPalette {
   /// is set to 66.1 %.
   ///
   ///     WarmPalette wp = new WarmPalette(8);
-  WarmPalette(size) : super(34.1, 66.1, size);
+  WarmPalette(int size) : super(34.1, 66.1, size);
 }
+
 /// PopPalette represents a ColorPalette with
 /// colors that 'pop' of size [size]
 ///
@@ -114,8 +124,9 @@ class PopPalette extends ColorPalette {
   /// to 42.0 %.
   ///
   ///     PopPalette pp = new PopPalette(8);
-  PopPalette(size) : super(51.4, 42.0, size);
+  PopPalette(int size) : super(51.4, 42.0, size);
 }
+
 /// CustomPalette represents a ColorPalette with
 /// custom colors of size [size].
 ///
@@ -126,8 +137,5 @@ class CustomPalette extends ColorPalette {
   /// saturation and lightness of size [size].
   ///
   ///     CustomPalette cp = new CustomPalette(40.1, 66.4, 5);
-  CustomPalette(saturation, lightness, size)
-      : super(saturation, lightness, size);
+  CustomPalette(double saturation, double lightness, int size) : super(saturation, lightness, size);
 }
-
-
